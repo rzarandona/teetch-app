@@ -1,0 +1,1001 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+/* TOASTR */
+/*
+ * Note that this is toastr v2.1.3, the "latest" version in url has no more maintenance,
+ * please go to https://cdnjs.com/libraries/toastr.js and pick a certain version you want to use,
+ * make sure you copy the url from the website since the url may change between versions.
+ * */
+ .toast-title{font-weight:700}.toast-message{-ms-word-wrap:break-word;word-wrap:break-word}.toast-message a,.toast-message label{color:#FFF}.toast-message a:hover{color:#CCC;text-decoration:none}.toast-close-button{position:relative;right:-.3em;top:-.3em;float:right;font-size:20px;font-weight:700;color:#FFF;-webkit-text-shadow:0 1px 0 #fff;text-shadow:0 1px 0 #fff;opacity:.8;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=80);filter:alpha(opacity=80);line-height:1}.toast-close-button:focus,.toast-close-button:hover{color:#000;text-decoration:none;cursor:pointer;opacity:.4;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);filter:alpha(opacity=40)}.rtl .toast-close-button{left:-.3em;float:left;right:.3em}button.toast-close-button{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance:none}.toast-top-center{top:0;right:0;width:100%}.toast-bottom-center{bottom:0;right:0;width:100%}.toast-top-full-width{top:0;right:0;width:100%}.toast-bottom-full-width{bottom:0;right:0;width:100%}.toast-top-left{top:12px;left:12px}.toast-top-right{top:12px;right:12px}.toast-bottom-right{right:12px;bottom:12px}.toast-bottom-left{bottom:12px;left:12px}#toast-container{position:fixed;z-index:999999;pointer-events:none}#toast-container *{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}#toast-container>div{position:relative;pointer-events:auto;overflow:hidden;margin:0 0 6px;padding:15px 15px 15px 50px;width:300px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;background-position:15px center;background-repeat:no-repeat;-moz-box-shadow:0 0 12px #999;-webkit-box-shadow:0 0 12px #999;box-shadow:0 0 12px #999;color:#FFF;opacity:.8;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=80);filter:alpha(opacity=80)}#toast-container>div.rtl{direction:rtl;padding:15px 50px 15px 15px;background-position:right 15px center}#toast-container>div:hover{-moz-box-shadow:0 0 12px #000;-webkit-box-shadow:0 0 12px #000;box-shadow:0 0 12px #000;opacity:1;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);filter:alpha(opacity=100);cursor:pointer}#toast-container>.toast-info{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=)!important}#toast-container>.toast-error{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=)!important}#toast-container>.toast-success{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhLY2AYBfQMgf///3P8+/evAIgvA/FsIF+BavYDDWMBGroaSMMBiE8VC7AZDrIFaMFnii3AZTjUgsUUWUDA8OdAH6iQbQEhw4HyGsPEcKBXBIC4ARhex4G4BsjmweU1soIFaGg/WtoFZRIZdEvIMhxkCCjXIVsATV6gFGACs4Rsw0EGgIIH3QJYJgHSARQZDrWAB+jawzgs+Q2UO49D7jnRSRGoEFRILcdmEMWGI0cm0JJ2QpYA1RDvcmzJEWhABhD/pqrL0S0CWuABKgnRki9lLseS7g2AlqwHWQSKH4oKLrILpRGhEQCw2LiRUIa4lwAAAABJRU5ErkJggg==)!important}#toast-container>.toast-warning{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII=)!important}#toast-container.toast-bottom-center>div,#toast-container.toast-top-center>div{width:300px;margin-left:auto;margin-right:auto}#toast-container.toast-bottom-full-width>div,#toast-container.toast-top-full-width>div{width:96%;margin-left:auto;margin-right:auto}.toast{background-color:#030303}.toast-success{background-color:#51A351}.toast-error{background-color:#BD362F}.toast-info{background-color:#2F96B4}.toast-warning{background-color:#F89406}.toast-progress{position:absolute;left:0;bottom:0;height:4px;background-color:#000;opacity:.4;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);filter:alpha(opacity=40)}@media all and (max-width:240px){#toast-container>div{padding:8px 8px 8px 50px;width:11em}#toast-container>div.rtl{padding:8px 50px 8px 8px}#toast-container .toast-close-button{right:-.2em;top:-.2em}#toast-container .rtl .toast-close-button{left:-.2em;right:.2em}}@media all and (min-width:241px) and (max-width:480px){#toast-container>div{padding:8px 8px 8px 50px;width:18em}#toast-container>div.rtl{padding:8px 50px 8px 8px}#toast-container .toast-close-button{right:-.2em;top:-.2em}#toast-container .rtl .toast-close-button{left:-.2em;right:.2em}}@media all and (min-width:481px) and (max-width:768px){#toast-container>div{padding:15px 15px 15px 50px;width:25em}#toast-container>div.rtl{padding:15px 50px 15px 15px}}
+.toast-message{
+	line-height: 1.3;
+}
+.toast{
+	z-index:99999 !important;
+}
+
+
+
+
+
+ 
+ .calendar {
+	position: relative;
+	overflow: hidden;
+	text-transform: capitalize;
+	text-align: center;
+	font: 15px/1em inherit;
+	color: #093D64;
+	
+}
+
+.calendar a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.calendar header {
+	padding: 10px 0px;
+	border-top: 2px solid #093D64;
+	border-bottom: 2px solid #093D64;
+	text-align: left;
+    position: relative;
+}
+
+.calendar footer .filter{
+	border-bottom: 2px solid #093D64;
+	margin:20px 10px;
+}
+
+
+.calendar header .simple-calendar-btn {
+	display: inline-block;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	color: #093D64;
+}
+
+.calendar header .simple-calendar-btn:hover {
+	background: #CBD1D2;
+	color: white;
+}
+
+.calendar header .simple-calendar-btn:before {
+	content: '';
+	position: absolute;
+  top: 11px;
+	left: 8px;
+	width: 8px;
+	height: 8px;
+	border-style: solid;
+	border-width: 3px 3px 0 0;
+	transform: rotate(45deg);
+	transform-origin: center center;
+}
+
+
+.calendar header .btn-prev {
+	top: 20%;
+	right: 30px;
+	transform: rotate(-180deg);
+}
+
+.calendar header .btn-next {
+  top: 20%;
+	right: 0px;
+}
+
+.calendar header .btn-next:before {
+	transform: rotate(45deg);
+}
+
+.calendar header .month {
+	padding: 0;
+	margin: 0;
+}
+
+.calendar header .month .year {
+	font-weight: 100;
+}
+
+.calendar table {
+	width: 100%;
+	margin: 20px 0;
+	border-spacing: 0px;
+}
+
+.calendar thead {
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+.calendar td {
+	padding: .8em .1em;
+}
+
+.calendar .day {
+	position: relative;
+	display: inline-block;
+	width: 2.5em;
+	height: 2.5em;
+	line-height: 2.5em;
+	border-radius: 50%;
+	border: 2px solid transparent;
+	cursor: pointer;
+}
+
+.calendar .day:hover{
+	background: #E5C465;
+	cursor: pointer !important;
+}
+
+.calendar .day.today {
+	background: #34DDA7 !important;
+	color: white;
+}
+
+.calendar .day.today.has-event:after {
+	background: white;
+}
+
+.calendar .day.wrong-month {
+	color: #CBD1D2;
+}
+
+.calendar .day.wrong-month:hover {
+	color: #CBD1D2;
+}
+
+.calendar .day.wrong-month.has-event:hover {
+	color: #fff;
+}
+
+.calendar .day.has-event:after {
+	display: none;
+	content: '';
+	position: absolute;
+	top: calc(50% + .6em);
+	left: calc(50% - 2px);
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background: #6691CC;
+}
+
+.calendar .day.has-event {
+	background: #3AB890;
+	color:#fff;
+}
+
+.calendar .day.active{
+	background: #E5C465 !important;
+	cursor: pointer !important;
+	color: #093D64;
+}
+
+.calendar .day.disabled {
+	cursor: default !important;
+	background: none !important;
+}
+
+.calendar .day.disabled:hover {
+	border: 2px solid transparent;
+	background: none !important;
+}
+
+.calendar .day.today:hover {
+	background: #E5C465 !important;
+	cursor: pointer !important;
+}
+
+.calendar .day.disabled.has-event {
+	cursor: default !important;
+	background: #ccc !important;
+}
+
+.calendar .day.disabled.has-event:hover {
+	cursor: default !important;
+	background: #ccc !important;
+}
+
+.calendar .event-container {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 70px;
+	background: #545A5C;
+	box-sizing: border-box;
+}
+
+.calendar .event-container .event-wrapper {
+	overflow-y: auto;
+	max-height: 100%;
+}
+
+.calendar .event-container .event {
+	position: relative;
+	width: 100%;
+	padding: 1em;
+	margin-bottom: 1em;
+	background: #6691CC;
+	border-radius: 4px;
+	box-sizing: border-box;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+	text-align: left;
+	color: white;
+}
+
+.calendar .event-container .event-date {
+	margin-bottom: 1em;
+}
+
+.calendar .event-container .event-hour {
+	float: right;
+}
+
+.calendar .event-container .event-summary {
+	font-weight: 600;
+}
+
+.calendar .filler {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: #545A5C;
+	transform: translate(-50%, -50%);
+}
+
+#date-selected {
+	text-align: center;
+	margin-bottom: 100px;
+	display: block;
+	font-weight: bold;
+}
+
+#event-detail {
+	display: block;
+	margin: auto;
+	width: 400px;
+	text-align: center;
+}
+
+/*Customisations*/
+
+.calendar-container .calendar{
+  text-align: center;
+   
+}
+.calendar-container header{
+   padding: 10px 0px;
+   border-top: 2px solid #093D64;
+   border-bottom: 2px solid #093D64;
+   text-align: left;
+   margin: 20px 10px 0px;
+}
+.calendar-container .btn-prev, .calendar-container .btn-next{
+   top:15px;
+}
+.calendar-container td{
+   text-align: center;
+   border:none;
+}
+.calendar-container table{
+   border:none;
+   margin: 0;
+}
+.calendar-container h2{
+   font-size:24px !important;
+}
+.teetchform-wrapper{
+  color:#093D64;
+}
+.teetchform-wrapper header{
+  text-align:center;
+  padding:10px 30px;
+}
+.teetchform-wrapper h4{
+  font-weight:bold;
+  color:#093D64;
+}
+.teetchform-wrapper p{
+  line-height: 1.3;
+  padding:0 20px;
+  margin-bottom:0px;
+}
+
+.teetchform-wrapper .date-wrapper{
+  border-top:2px solid #093D64;
+  border-bottom:2px solid #093D64;
+  margin:0 15px 20px;
+}
+.teetchform-wrapper .selected-date{
+  width:30%;
+  display:inline-block;
+  font-weight:bold;
+  font-size:20px;
+}
+.teetchform-wrapper #selected-month{
+  text-align:center;
+}
+.teetchform-wrapper #selected-year{
+  text-align:right;
+  float:right;
+}
+
+.teetchform-container{
+  padding:0 10px 20px;
+}
+
+.teetchform-container .hr{
+  background-color: #093D64 !important;
+  height: 2px;
+  display:block;
+  margin:10px !important;
+}
+
+
+.teetch-button-wrapper{
+  margin-top:40px;
+  text-align:center;
+}
+.teetch-button-wrapper .button{
+  display: inline-block;
+  margin:auto;
+  background:#3AB890;
+  font-family: "Nunito", Sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 10px 30px 10px 30px;
+    border-radius: 60px;
+    text-transform: uppercase;
+	cursor: pointer;
+}
+.teetch-button-wrapper .button:hover{
+  background: #34DDA7;
+}
+
+/*Rounded Checkbox */
+.round {
+  position: relative;
+  margin:5px 15px 0;
+  display:inline-block;
+  color:#093D64;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #093D64;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: 4px;
+  width: 20px;
+}
+.round span{
+  margin-left:10px;
+  font-weight: bold;
+}
+
+.round input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.round input[type="checkbox"]:checked + label {
+  background-color:#34DDA7;
+  border-color: #093D64;
+}
+
+.round input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+.round input.reserved[type="checkbox"]:checked + label {
+	background-color:#E5C465 !important;
+	border-color: #093D64;
+}
+.round input[type="checkbox"]:disabled + label{
+	cursor:default !important;
+}
+.round input[type="checkbox"]:disabled ~ span {
+	color:#999 !important;
+}
+
+#today-schedule-list{
+	max-height: 430px;
+    overflow-y: scroll;
+	margin:0;
+	padding: 0 12px 0 20px;
+}
+#today_date_wrapper{
+	border-top:2px solid #093D64 !important;
+	border-bottom:2px solid #093D64 !important;
+	margin:0 0 20px !important;
+	display: grid !important;
+	grid-template-columns: 1fr 1fr !important;
+	padding:5px 0;
+	font-weight: 700;
+	margin:0 20px !important;
+
+}
+
+#today_date_wrapper .today_label{
+	text-align: left;
+	font-size: 20px;
+}
+
+#today_date_wrapper .today_date{
+	text-align: right;
+	font-size: 20px;
+	color: #3AB890;
+
+}
+
+.today-schedule-list{
+	list-style-type: none;
+	margin:0 20px;
+}
+.today-schedule-item{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border-bottom: 1px solid #093D64;
+	padding: 10px 0;
+	align-items: center;	
+}
+.today-schedule-item.teacher{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border-bottom: 1px solid #093D64;
+	padding: 10px 0;
+	align-items: center;
+	height: 55px;	
+}
+.schedule-timeslot{
+	font-weight: bold;
+}
+.schedule-status p{
+	text-align: right !important;
+	padding:0 !important;
+}
+
+.schedule-status.closed{
+	color:#3AB890 !important;
+}
+.schedule-status.reserved{
+	color:#E5C465 !important;
+}
+.schedule-status.completed{
+	color: rgb(255,79,78) !important;
+}
+.schedule-status.cancelled{
+	color: #999 !important;
+}
+
+
+
+
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #34dda8a8; 
+    -webkit-box-shadow: inset 0 0 6px #34dda8a8; 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #34dda85d; 
+}
+
+
+.teetch-student-booking-container{
+	display:grid;
+	grid-template-columns: 1.5fr 1fr;
+	grid-gap:30px;
+	font-family: "nunito";
+	align-items: end;
+}
+
+#teetch_student_booking_calendar{
+	background:#dee2e8;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,.2) !important;
+	border-radius: 15px;
+}
+#teetch_student_booking_calendar .calendar {
+	padding-top: 55px;
+}
+#teetch_student_booking_calendar .calendar header{
+	margin: 0;
+    position: absolute;
+    top: 5px;
+    right: -5px;
+    border: none;
+    width: 200px;
+    transform: scale(.7);
+}
+
+.tts-open-timeslots p{
+	margin-bottom:0;
+	text-align:center;
+}
+.tts-open-timeslots p{
+	font-size: 18px;
+	font-weight: 700;
+	color: #093D64;
+}
+.tts-open-timeslots p.number{
+	font-size: 32px;
+	color: #E5C465;
+}
+.tts-open-timeslots p.label{
+	border-bottom: 1px solid #093D64;
+	margin-top: -15px;
+	padding-bottom: 10px !important;
+	margin-left: 20px;
+	margin-right:20px;
+}
+
+.teacher-today-timeslots{
+	margin:0 35px;
+}
+
+
+
+.teetch-student-booking-container .round{
+	justify-self:end !important;
+}
+.teetch-student-booking-container .round{
+	justify-self:end !important;
+}
+
+
+.teetch-student-booking-container .round input[type="checkbox"]:checked + label {
+	background-color: #093D64;
+	border-color: #093D64;
+  }
+
+
+.teetch-student-booking-container .checkbox-container{
+	justify-self: end;
+}
+
+
+.teetch-student-booking-container .checkbox-container i{
+	margin-right:12px; 
+}
+
+
+.checkbox-el {
+	position: relative;
+	margin-left: 4px;
+	width: 25px;
+	float: left;
+	/* margin: 2px 10px 2px 1px; */
+	height: 25px;
+	border-radius: 50%;
+	vertical-align: middle;
+	border: 2px solid #295282;
+	-webkit-appearance: none;
+	outline: none;
+	cursor: pointer;
+	padding: 5px;
+
+  }
+  
+  .checkbox-el input {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	z-index: 5;
+	opacity: 0;
+	cursor: pointer;
+  }
+  
+  .checkbox-circle {
+	position: relative;
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transform: scale(0.5);
+	transition: all 0.25s ease-in;
+  }
+  
+  .checkbox-el input:checked + .checkbox-circle {
+	background-color: #253849;
+	transform: scale(1)
+  }
+
+
+.selected-teacher-container{
+	display:grid;
+	grid-template-columns: auto 1fr;
+	grid-gap:20px;
+	margin-bottom: 20px;
+	align-items:center;
+}
+
+.selected-teacher-container .selected-teacher-image img{
+	height: 80px;
+	width: 80px;
+	border-radius: 100000px;
+	object-fit: cover;
+	border:2px solid #093D64;
+}
+
+.selected-teacher-container .selected-teacher-info p{
+	margin:0 !important;
+	margin-bottom: -10px !important;
+}
+p.status_icon{
+	text-align:right;
+	padding:0 5px;
+}
+
+p.status_icon.reserved i{
+	margin-right: 7px;
+	transform:scale(1.2);
+	color: #E5C465;
+    border: 1px solid #093D64;
+    border-radius: 100%;
+    padding: 2px;
+
+}
+
+section.teacher_card{
+	cursor:pointer;
+}
+section.teacher_card:hover{
+	background:#EDF0F5;
+}
+.teacher_card.tc_active{
+	background:#EDF0F5;
+	box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+}
+
+
+
+
+
+/* COMPONENT-SPECIFIC STYLES */
+.student-modifier-wrapper{
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-gap:30px;
+    background-color: aliceblue;
+    padding:30px;
+    border-radius:15px;
+}
+.student-modifier-wrapper p{
+	margin:0;
+}
+.student-modifier-wrapper,
+.student-modifier-wrapper *{
+	font-family: "Nunito" !important;;
+}
+
+.student-modifier-wrapper > div > div{
+    border-radius:15px;
+    box-shadow:0 0 10px 0 rgba(0,0,0,.15);
+}
+
+.student-modifier-wrapper .calendar{
+    width:100%;
+    background:rgb(224, 237, 248);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.student-modifier-teachers-list{
+    background-color: rgb(224, 237, 248);
+    width:100%;
+    min-height: 500px;
+    padding: 20px 10px 20px 10px;
+    max-height: 500px;
+    overflow-y:auto;
+}
+
+.student-modifier-wrapper p.title{
+    margin:0;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.student-modifier-teachers-list .list-header{
+    display: grid;
+    grid-template-columns: 50px 1.3fr 1fr 1fr 1fr;
+    font-weight: bold;
+    font-weight: 18px;
+    border-bottom:1px solid #295282;
+    color:#295282;
+    padding-bottom: 10px;
+    grid-gap: 30px;
+}
+
+
+/* LIST ITEMS */
+.list-item{
+    border-bottom:1px solid #295282;
+    padding:10px 0 5px 0;
+    display: grid;
+    grid-template-columns: 50px 1.3fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+    align-items: center;
+    font-size: .8em;
+}
+.list-item .item-image img{
+    height: 50px;
+    width:50px;
+    object-fit: cover;
+    border-radius: 100%;
+    border:2px solid #295282;
+    padding:1px;
+}
+
+.list-item .item-name p{
+    margin:0
+}
+
+.list-item .item-modify{
+    justify-self: end;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+}
+.list-item .item-modify button{
+    background:transparent;
+    border:1px solid #295282;
+    padding:5px 5px;
+    border-radius: 30px;
+    font-size: .8em;
+    font-weight: bold;
+    cursor:pointer;
+    transition:.1s;
+	color:#295282;
+	align-items: center;
+}
+.list-item .item-modify a{
+    background:transparent;
+    border:1px solid #295282;
+    padding:5px 5px;
+    border-radius: 30px;
+    font-size: .8em;
+    font-weight: bold;
+    cursor:pointer;
+    transition:.1s;
+	color:#295282;
+	display: block;
+    padding: 1px 5px;
+    margin-top: 3px;
+}
+
+.list-item .item-modify button:hover{
+    background: #295282;
+    color:white
+}
+
+
+
+
+/* MODIFIER CALENDAR */
+
+
+#teetch_modifier_calendar .calendar,
+#modifier_current_teacher_calendar .calendar{
+	display: block !important;
+	padding:20px;
+}
+
+#teetch_modifier_calendar .calendar table,
+#modifier_current_teacher_calendar .calendar table{
+	border:none;
+}
+#teetch_modifier_calendar .calendar h2,
+#modifier_current_teacher_calendar .calendar h2{
+	font-size: 1.3em;
+}
+    
+#teetch_modifier_calendar .calendar td,
+#modifier_current_teacher_calendar .calendar td{
+	text-align: center;
+	border:none;
+}
+
+
+/* POPUP */
+.sm-popup-container{
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99;
+    background: rgba(0,0,0,.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	transition: .1s;
+    transform: scale(0);
+}
+
+.sm-popup-options{
+    background: white;
+    padding: 20px;
+	min-width: 350px;
+	display: grid;
+	grid-template-columns: 30% 70%;
+	overflow:hidden;
+    grid-gap: 20px;
+	align-items: center;
+}
+
+.sm-popup-options img{
+	height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 100% !important;
+	display: block;
+    margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+
+.sm-popup-options h4{
+	text-align: center;
+	font-weight: bolder;
+	border-bottom: 2px solid #295282;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.sm-popup-options .teacher_name{
+
+	text-align: center;
+    font-weight: bolder;
+}
+
+.sm-popup-options .schedule-datetime{
+	border-bottom: 2px solid #295282;
+    text-align: center;
+    font-size: .8em;
+    padding-bottom: 10px;
+}
+
+.sm-popup-options .options{
+	overflow: hidden !important;
+	transition:.2s;
+	opacity:.4;
+}
+.sm-popup-options .options .date,
+.sm-popup-options .options .hour{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+	padding: 10px 0;
+    align-items: center;
+}
+
+.sm-popup-options .options .date .option-setting,
+.sm-popup-options .options .hour .option-setting{
+	justify-self: end;
+    text-align: right;
+}
+
+.sm-popup-options .options .date .option-setting small,
+.sm-popup-options .options .hour .option-setting small{
+	margin-top: -5px;
+	display: block;
+}
+
+.sm-popup-options .cancel-container{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 2px solid #295282;
+    border-bottom: 2px solid #295282;
+    margin-bottom: 20px;
+}
+.sm-popup-options .cancel-container{
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 2px solid #295282;
+    border-bottom: 2px solid #295282;
+    margin-bottom: 20px;
+}
+
+.sm-popup-options .checkbox-container{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: -10px;
+}
+
+.sm-popup-options button{
+	
+    display: block;
+    margin: 0 auto;
+    background: #3AB890;
+    border-radius: 200px;
+    padding: 15px 40px;
+
+}
+
+.sm-popup-options .sm-popup-close{
+	background: transparent;
+    padding: 10px 15px;
+    border-radius: 10px;
+    position: absolute;
+    right: 5px;
+    transform: scale(.9);
+    top: 5px;
+    color: #3AB890;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.sm-options .options-wrapper{
+	position:relative;
+}
+
+
+#modifier_current_teacher_calendar .teetch-student-booking-container{
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 0;
+}
+
+#modifier_current_teacher_calendar #teetch_student_booking_calendar{
+	box-shadow: none !important;
+}
+
+#modifier_current_teacher_calendar .checkbox-container{
+	padding-right: 10px;
+}
+
+#modifier_current_teacher_calendar  .teacher-today-timeslots{
+	margin: 0 10px
+}
+#modifier_current_teacher_calendar .calendar{
+	padding-top:40px;
+}
+#modifier_current_teacher_calendar #teetch_student_booking_calendar .calendar header{
+	top:0;
+}
+#modifier_current_teacher_calendar .checkbox-el{
+	margin:0 !important;
+}
+
+
+/* TEMPORARY HIDE OF MODIFIER CALENDAR */
+#modifier_current_teacher_calendar{
+	display: none !important;
+	/* display: block; */
+
+}
+.sm-popup-options{
+	grid-template-columns: 100% !important;
+	/* grid-template-colums: 30% 70% !important; */
+}
