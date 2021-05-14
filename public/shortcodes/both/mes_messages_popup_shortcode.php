@@ -12,6 +12,8 @@
         align-items: center;
         justify-content: center;
         font-family: "Nunito";
+        transition: .1s;
+        transform: scale(0);
     }
 
     #mes-messages-popup .messages-list{
@@ -49,6 +51,15 @@
         justify-self: end;
     }
 
+    #mes-messages-popup .mes-messages-close{
+        display: block;
+        margin-left: auto;
+        background: white;
+        color: #3ab890;
+        padding: 10px 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
 
 </style>
 <div id='mes-messages-popup'>
@@ -124,3 +135,15 @@
     </div>
 
 </div>
+
+<script>
+    jQuery(document).ready(function($){
+        $('#mes-messages-trigger').click(function(){
+            $('#mes-messages-popup').css({
+                'transform': 'scale(1)'
+            });
+        })
+    })
+    
+
+</script>
