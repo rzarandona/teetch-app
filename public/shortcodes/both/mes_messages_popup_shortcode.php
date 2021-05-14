@@ -26,6 +26,7 @@
         grid-template-columns: 1fr 3fr 2fr;
         align-items: center;
         padding:20px 10px;
+        border-radius:5px;
     }
 
     #mes-messages-popup .message-item:nth-child(odd){
