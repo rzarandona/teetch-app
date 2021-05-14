@@ -1,6 +1,6 @@
 <style>
 
-    .mes-messages-popup{
+    #mes-messages-popup{
         height: 100vh;
         width:100vw;
         position: fixed;
