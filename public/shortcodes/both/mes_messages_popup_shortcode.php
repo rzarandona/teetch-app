@@ -32,17 +32,15 @@
         display: grid;
         grid-template-columns: 1fr 3fr 2fr;
         align-items: center;
-        padding:20px 10px;
+        padding:10px 10px;
         border-radius:5px;
         margin:10px 0;
+        border-bottom: 1px solid #999;
     }
 
     #mes-messages-popup .message-item.unopened{
-        background:#3ab890 !important;
-        color:white !important;
-    }
-    #mes-messages-popup .message-item.unopened a{
-        color:white !important;
+        color:black;
+        font-weight: bold;
     }
 
 
@@ -116,7 +114,7 @@
         
         console.log(messages);
     }
-    function get_number_of_messages(){
+    function get_number_of_unopened_messages(){
         let args = {
             action: 'get_user_messages',
             nonce: '<?php echo wp_create_nonce("teetchapp_nonce"); ?>',
@@ -149,7 +147,7 @@
     jQuery(document).ready(function($){
 
         
-        get_number_of_messages();
+        get_number_of_unopened_messages();
 
 
         $('#mes-messages-trigger').click(function(){
