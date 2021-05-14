@@ -34,7 +34,6 @@ else if(in_array( 'student', (array) $user->roles )){
         $rel_teacher_fname = get_user_meta($rel_teacher_id, 'first_name', true);
         $rel_teacher_lname = get_user_meta($rel_teacher_id, 'last_name', true);
         $rel_teacher_full_name = $rel_teacher_fname . ' ' . $rel_teacher_lname;
-
         
         $response[] = $rel_teacher_full_name;
 

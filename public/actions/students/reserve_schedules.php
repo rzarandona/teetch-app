@@ -75,10 +75,12 @@
                     );
 
                     $notification_id = wp_insert_post( $create_notification );
+
+                    update_post_meta($notification_id, 'schedule-id', $schedule_id);
                     update_post_meta($notification_id, 'student-id', $user_id);
                     update_post_meta($notification_id, 'teacher-id', $teacher_id);
                     update_post_meta($notification_id, 'message', 'A schedule for you has been set on May 5, 2021 9h00');
-                    
+
             }
 
             // -> 5. deduct the credits; 
