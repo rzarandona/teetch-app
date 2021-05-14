@@ -41,6 +41,10 @@
         background:#3ab890 !important;
         color:white !important;
     }
+    #mes-messages-popup .message-item.unopened a{
+        color:white !important;
+    }
+
 
     #mes-messages-popup .message-item:nth-child(odd){
         background:#efefef;
