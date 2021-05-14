@@ -86,10 +86,7 @@
         <div class="messages-loader">
             <div class="loader"></div>
         </div>
-        <div class="messages-list">
-            
-
-        </div>
+        <div class="messages-list"></div>
     </div>
 
 </div>
@@ -99,6 +96,7 @@
     function mapMessages(messages){
 
         messages.forEach((message)=>{
+            jQuery('.messages-list').empty();
             jQuery('.messages-list').append(
                 `
                     <div class="message-item ${message.status}">
