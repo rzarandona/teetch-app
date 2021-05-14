@@ -121,7 +121,7 @@
                     $('.messages-loader').css({
                         'transform': 'scale(1)'
                     });
-                }
+                },
                 success: function(response){
                     response = response.slice(0, -1);
                     response = JSON.parse(response);
