@@ -10,7 +10,7 @@ if(in_array( 'teacher', (array) $user->roles )){
     $response['role'] = 'teacher';
 }
 else if(in_array( 'student', (array) $user->roles )){
-    $response['role'] = 'teacher';
+    $response['role'] = 'student';
 }
 
 echo json_encode($response);
