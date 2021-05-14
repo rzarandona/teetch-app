@@ -123,6 +123,8 @@
                     console.log(response)
                 },
                 complete:function(response){
+                    
+
                     $('.messages-loader').css({
                         'transform': 'scale(0)'
                     });
