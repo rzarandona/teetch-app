@@ -39,7 +39,7 @@
 
     #mes-messages-popup .message-item.unopened{
         background:#3ab890 !important;
-        color:white;
+        color:white !important;
     }
 
     #mes-messages-popup .message-item:nth-child(odd){
