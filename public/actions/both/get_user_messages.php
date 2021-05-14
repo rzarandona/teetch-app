@@ -10,23 +10,25 @@ if(in_array( 'teacher', (array) $user->roles )){
     $response['role'] = 'teacher';
 }
 else if(in_array( 'student', (array) $user->roles )){
-    $response['role'] = 'student';
+
+    $messages = get_posts( 
+        [
+            'posts_per_page' => -1,
+            'post_type'=> 'notifications',
+            'meta_query' => [
+
+                [
+                    'key'   => 'student-id',
+                    'value' => $user_id,
+                ]
+
+            ]
+        ]
+     );
+    $response[] = $messages;
 }
 
 echo json_encode($response);
 
 
-// $messages = get_posts( 
-//     [
-//         'posts_per_page' => -1,
-//         'post_type'=> 'notifications',
-//         'meta_query' => [
 
-//             [
-//                 'key'   => 'student-id',
-//                 'value' => $user_id,
-//             ]
-
-//         ]
-//     ]
-//  );
