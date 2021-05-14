@@ -25,7 +25,7 @@ else if(in_array( 'student', (array) $user->roles )){
             ]
         ]
      );
-    $response[] = $messages;
+    $response = $messages;
 }
 
 echo json_encode($response);
