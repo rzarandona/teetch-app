@@ -94,7 +94,7 @@
 <script>
 
     function mapMessages(messages){
-
+        console.log(messages);
         messages.forEach((message)=>{
             jQuery('.messages-list').empty();
             jQuery('.messages-list').append(
