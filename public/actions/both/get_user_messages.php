@@ -5,6 +5,7 @@ $user_id = get_current_user_id();
 
 $response = [];
 
+
 // if user is teacher
 if(in_array( 'teacher', (array) $user->roles )){
     $response['role'] = 'teacher';
@@ -51,10 +52,18 @@ else if(in_array( 'student', (array) $user->roles )){
         $response[] = $message_item;
 
      }
+
+     echo json_encode($response);
+
+     foreach($messages as $message){
+        $m_id = $message->ID;
+        update_post_meta($m_id, 'student-status', 'opened');
+    }
+    
 }
 
 
-echo json_encode($response);
+
 
 
 

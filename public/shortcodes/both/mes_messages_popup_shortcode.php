@@ -35,7 +35,7 @@
         padding:10px 10px;
         border-radius:5px;
         margin:10px 0;
-        border-bottom: 1px solid #999;
+        border-bottom: 1px solid #ddd;
     }
 
     #mes-messages-popup .message-item.unopened{
@@ -137,6 +137,11 @@
                     jQuery('#messages-notif .messages-notif').text(response.length);
                     jQuery('#messages-notif').css({
                         'transform': 'scale(.5)'
+                    });
+                }else{
+                    jQuery('#messages-notif .messages-notif').text(response.length);
+                    jQuery('#messages-notif').css({
+                        'transform': 'scale(0)'
                     });
                 }
             }
