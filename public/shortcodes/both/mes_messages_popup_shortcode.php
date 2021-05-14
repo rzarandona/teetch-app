@@ -113,8 +113,40 @@
                 `
         )   
         })
+    }
+
+    function retrieveMessages(){
+        let messages = [];
+
+        let args = {
+                action: 'get_user_messages',
+                nonce: '<?php echo wp_create_nonce("teetchapp_nonce"); ?>',
+            }
+
+        $.ajax({
+            type:'post',
+            dataTye:'JSON',
+            url:teetchAjax.ajaxurl,
+            data: args,
+            beforeSend: function(){
+                $('.messages-loader').css({
+                    'transform': 'scale(1)'
+                });
+            },
+            success: function(response){
+                response = response.slice(0, -1);
+                response = JSON.parse(response);
+                messages = response;
+            },
+            complete:function(response){
+                $('.messages-loader').css({
+                    'transform': 'scale(0)'
+                });
+            }
         
-        console.log(messages);
+        });
+
+        return messages;
     }
 
     jQuery(document).ready(function($){
@@ -123,33 +155,7 @@
                 'transform': 'scale(1)'
             });
 
-            let args = {
-                action: 'get_user_messages',
-                nonce: '<?php echo wp_create_nonce("teetchapp_nonce"); ?>',
-            }
-
-            $.ajax({
-                type:'post',
-                dataTye:'JSON',
-                url:teetchAjax.ajaxurl,
-                data: args,
-                beforeSend: function(){
-                    $('.messages-loader').css({
-                        'transform': 'scale(1)'
-                    });
-                },
-                success: function(response){
-                    response = response.slice(0, -1);
-                    response = JSON.parse(response);
-                    mapMessages(response)
-                },
-                complete:function(response){
-                    $('.messages-loader').css({
-                        'transform': 'scale(0)'
-                    });
-                }
-            
-            });
+            mapMessages(retrieveMessages());
 
         })
 
