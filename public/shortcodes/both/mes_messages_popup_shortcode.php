@@ -16,6 +16,9 @@
         transform: scale(0);
     }
 
+    #mes-messages-popup .messages-list-container{
+        position:relative
+    }
     #mes-messages-popup .messages-list{
         padding: 20px;
         background: white;
@@ -59,6 +62,20 @@
         padding: 10px 15px;
         margin-bottom: 10px;
         border-radius: 5px;
+    }
+
+    #mes-messages-popup .messages-loader{
+        position: absolute;
+        height: 500px;
+        background: rgba(0,0,0,.3);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        bottom: 0;
+        justify-content: center;
+        border-radius: 10px;
+        transform: scale(1);
+        transition: .2s;
     }
 
 </style>
