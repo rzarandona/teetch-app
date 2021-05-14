@@ -150,7 +150,7 @@
                 
 
                 // THIS CODE WILL JUST RUN WHEN THE POPUP IS OPEN
-                $('#mes-messages-popup').css({
+                jQuery('#mes-messages-popup').css({
                     'transform': 'scale(0)'
                 });
                 jQuery('.messages-list').empty();
