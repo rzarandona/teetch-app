@@ -66,13 +66,10 @@
     <div class="messages-list-container">
 
         <button class='mes-messages-close'><i class="fas fa-times"></i></button>
-
+        <div class="messages-loader">
+            <div class="loader"></div>
+        </div>
         <div class="messages-list">
-
-            <div class="messages-loader">
-                <div class="loader"></div>
-            </div>
-
             <div class="message-item unopened">
                 
                 <div class="teacher">Arlene McCoy</div>
