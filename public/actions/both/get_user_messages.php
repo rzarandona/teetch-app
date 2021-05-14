@@ -54,11 +54,6 @@ else if(in_array( 'student', (array) $user->roles )){
      }
 
      echo json_encode($response);
-
-     foreach($messages as $message){
-        $m_id = $message->ID;
-        update_post_meta($m_id, 'student-status', 'opened');
-    }
     
 }
 

@@ -287,5 +287,8 @@ class Teetch_App_Public {
 		require "actions/both/get_user_messages.php";
 	}
 
+	public function open_user_messages(){
+		require "actions/both/open_user_messages.php";
+	}
 
 }//end class

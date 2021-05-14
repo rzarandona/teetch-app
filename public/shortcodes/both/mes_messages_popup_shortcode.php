@@ -95,9 +95,7 @@
 
 <script>
 
-    function map_messages(messages){
-        console.log(messages);
-        jQuery('.messages-list').empty();
+    function map_messages(messages){        
         messages.forEach((message)=>{
             jQuery('.messages-list').append(
                 `
@@ -153,6 +151,28 @@
         
         });
     }
+    function open_all_messages(){
+        let args = {
+            action: 'open_all_messages',
+            nonce: '<?php echo wp_create_nonce("teetchapp_nonce"); ?>',
+        }
+
+        jQuery.ajax({
+            type:'post',
+            dataTye:'JSON',
+            url:teetchAjax.ajaxurl,
+            data: args,
+            beforeSend: function(){
+                jQuery('.messages-loader').css({
+                    'transform': 'scale(1)'
+                });
+            },
+            success: function(response){
+                get_number_of_unopened_messages()
+            }
+        
+        });
+    }
 
     jQuery(document).ready(function($){
 
@@ -196,10 +216,11 @@
         })
 
         $('.mes-messages-close').click(function(){
+            open_all_messages();
             $('#mes-messages-popup').css({
                 'transform': 'scale(0)'
             });
-            get_number_of_unopened_messages();
+            jQuery('.messages-list').empty();
         })
     })
     
