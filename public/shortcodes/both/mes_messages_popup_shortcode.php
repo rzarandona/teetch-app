@@ -19,6 +19,8 @@
         background: white;
         border-radius: 10px;
         width: 800px;
+        height: 500px;
+        overflow-y: scroll;
     }
 
     #mes-messages-popup .message-item{
@@ -86,6 +88,27 @@
 
         </div>
 
+        <div class="message-item">
+            
+            <div class="teacher">Arlene McCoy</div>
+            <div class="message">A schedule for you has been set</div>
+            <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+        </div>
+        <div class="message-item">
+            
+            <div class="teacher">Arlene McCoy</div>
+            <div class="message">A schedule for you has been set</div>
+            <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+        </div>
+        <div class="message-item">
+            
+            <div class="teacher">Arlene McCoy</div>
+            <div class="message">A schedule for you has been set</div>
+            <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+        </div>
         <div class="message-item">
             
             <div class="teacher">Arlene McCoy</div>
