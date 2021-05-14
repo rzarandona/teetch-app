@@ -184,6 +184,8 @@ class Teetch_App {
 		$this->loader->add_action( 'wp_ajax_reserve_schedules', $plugin_public, 'reserve_schedules' );
 		$this->loader->add_action( 'wp_ajax_get_student_schedules', $plugin_public, 'get_student_schedules' );
 		$this->loader->add_action( 'wp_ajax_cancel_schedule', $plugin_public, 'cancel_schedule' );
+		$this->loader->add_action( 'wp_ajax_get_user_messages', $plugin_public, 'get_user_messages' );
+
 
 		$this->loader->add_shortcode( 'teetchapp_calendar', $plugin_public, 'teetchapp_calendar_shortcode' );
 		$this->loader->add_shortcode( 'teetchapp_set_availability', $plugin_public, 'teetchapp_set_availability_shortcode' );
