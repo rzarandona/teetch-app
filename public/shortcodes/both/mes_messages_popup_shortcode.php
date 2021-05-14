@@ -97,7 +97,7 @@
 
 <script>
 
-    function mapMessages(messages){
+    function map_messages(messages){
         console.log(messages);
         jQuery('.messages-list').empty();
         messages.forEach((message)=>{
@@ -116,9 +116,7 @@
         
         console.log(messages);
     }
-
-    jQuery(document).ready(function($){
-
+    function get_number_of_messages(){
         let args = {
             action: 'get_user_messages',
             nonce: '<?php echo wp_create_nonce("teetchapp_nonce"); ?>',
@@ -137,10 +135,21 @@
             success: function(response){
                 response = response.slice(0, -1);
                 response = JSON.parse(response);
-                console.log(response.length);
+                if(response.length > 0){
+                    $('#messages-notif .messages-notif').text(response.length);
+                    $('#messages-notif').css({
+                        'transform': 'scale(.5)'
+                    });
+                }
             }
         
         });
+    }
+
+    jQuery(document).ready(function($){
+
+        
+        get_number_of_messages();
 
 
         $('#mes-messages-trigger').click(function(){
@@ -166,7 +175,7 @@
                 success: function(response){
                     response = response.slice(0, -1);
                     response = JSON.parse(response);
-                    mapMessages(response)
+                    map_messages(response)
                 },
                 complete:function(response){
                     $('.messages-loader').css({
