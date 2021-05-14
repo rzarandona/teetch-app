@@ -106,6 +106,28 @@
             $('#mes-messages-popup').css({
                 'transform': 'scale(1)'
             });
+
+            let args = {
+                action: 'get_user_messages',
+                nonce: '<?php echo wp_create_nonce("teetchapp_nonce"); ?>',
+            }
+
+            $.ajax({
+                type:'post',
+                dataTye:'JSON',
+                url:teetchAjax.ajaxurl,
+                data: args,
+                success: function(response){
+                    console.log(response)
+                },
+                complete:function(response){
+                    $('.messages-loader').css({
+                        'transform': 'scale(0)'
+                    });
+                }
+            
+            });
+
         })
 
         $('.mes-messages-close').click(function(){
