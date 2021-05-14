@@ -67,13 +67,15 @@
                     
 
                     // -> 4. create relevant notification posts
-                    $create_meeting = array(
+                    $create_notification = array(
                         'post_title' => $meeting_title,
                         'post_status'   => 'publish',
                         'post_author'   => $user_id,
                         'post_type' => 'notifications',
                     );
-                    
+
+                    $notification_id = wp_insert_post( $create_notification );
+       
             }
 
             // -> 5. deduct the credits; 
