@@ -113,15 +113,16 @@
                 `
         )   
         })
+        
+        console.log(messages);
     }
 
-    function retrieveMessages(){
-        let messages = [];
+    jQuery(document).ready(function($){
 
         let args = {
-                action: 'get_user_messages',
-                nonce: '<?php echo wp_create_nonce("teetchapp_nonce"); ?>',
-            }
+            action: 'get_user_messages',
+            nonce: '<?php echo wp_create_nonce("teetchapp_nonce"); ?>',
+        }
 
         $.ajax({
             type:'post',
@@ -136,7 +137,7 @@
             success: function(response){
                 response = response.slice(0, -1);
                 response = JSON.parse(response);
-                messages = response;
+                console.log(response.length);
             },
             complete:function(response){
                 $('.messages-loader').css({
@@ -146,16 +147,39 @@
         
         });
 
-        return messages;
-    }
 
-    jQuery(document).ready(function($){
         $('#mes-messages-trigger').click(function(){
             $('#mes-messages-popup').css({
                 'transform': 'scale(1)'
             });
 
-            mapMessages(retrieveMessages());
+            let args = {
+                action: 'get_user_messages',
+                nonce: '<?php echo wp_create_nonce("teetchapp_nonce"); ?>',
+            }
+
+            $.ajax({
+                type:'post',
+                dataTye:'JSON',
+                url:teetchAjax.ajaxurl,
+                data: args,
+                beforeSend: function(){
+                    $('.messages-loader').css({
+                        'transform': 'scale(1)'
+                    });
+                },
+                success: function(response){
+                    response = response.slice(0, -1);
+                    response = JSON.parse(response);
+                    mapMessages(response)
+                },
+                complete:function(response){
+                    $('.messages-loader').css({
+                        'transform': 'scale(0)'
+                    });
+                }
+            
+            });
 
         })
 
