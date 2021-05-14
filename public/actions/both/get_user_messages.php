@@ -46,7 +46,7 @@ else if(in_array( 'student', (array) $user->roles )){
         $message_item['timeslot'] = $rel_timeslot;
 
         $message_status = get_post_meta($m_id, 'status', true);
-        $message_item['status'] = $message_status;
+        $message_item['student-status'] = $message_status;
 
         $response[] = $message_item;
 
