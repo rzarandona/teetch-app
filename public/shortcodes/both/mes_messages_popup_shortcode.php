@@ -107,7 +107,7 @@
                             
                         <div class="teacher">${message.teacher_name}</div>
                         <div class="message">A schedule for you has been set. <u><a href='${message.zoom_link}' target='_blank'>Join now!</a></u></div>
-                        <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+                        <div class="schedule">May 5, 2021 ${message.timeslot}h00 - ${message.timeslot}h45</div>
 
                     </div>
                 `
