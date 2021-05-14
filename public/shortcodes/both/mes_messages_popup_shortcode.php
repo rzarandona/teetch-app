@@ -87,13 +87,7 @@
             <div class="loader"></div>
         </div>
         <div class="messages-list">
-            <div class="message-item unopened">
-                
-                <div class="teacher">Arlene McCoy</div>
-                <div class="message">A schedule for you has been set</div>
-                <div class="schedule">May 5, 2021 9h00 - 10h45</div>
-
-            </div>
+            
 
         </div>
     </div>
@@ -101,6 +95,26 @@
 </div>
 
 <script>
+
+    function mapMessages(messages){
+
+        messages.forEach((message)=>{
+            jQuery('.messages-list').append(
+                `
+                    <div class="message-item ${message.status}">
+                            
+                        <div class="teacher">${message.teacher_name}</div>
+                        <div class="message">A schedule for you has been set. <u><a href='${message.zoom_link}' target='_blank'>Join now!</a></u></div>
+                        <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+                    </div>
+                `
+        )   
+        })
+        
+        console.log(messages);
+    }
+
     jQuery(document).ready(function($){
         $('#mes-messages-trigger').click(function(){
             $('#mes-messages-popup').css({
@@ -125,7 +139,7 @@
                 success: function(response){
                     response = response.slice(0, -1);
                     response = JSON.parse(response);
-                    console.log(response)
+                    mapMessages(response)
                 },
                 complete:function(response){
                     $('.messages-loader').css({

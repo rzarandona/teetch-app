@@ -13,7 +13,7 @@ else if(in_array( 'student', (array) $user->roles )){
 
     $messages = get_posts( 
         [
-            'posts_per_page' => -1,
+            'posts_per_page' => 20,
             'post_type'=> 'notifications',
             'meta_query' => [
 
