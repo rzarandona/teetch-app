@@ -122,13 +122,13 @@
             nonce: '<?php echo wp_create_nonce("teetchapp_nonce"); ?>',
         }
 
-        $.ajax({
+        jQuery.ajax({
             type:'post',
             dataTye:'JSON',
             url:teetchAjax.ajaxurl,
             data: args,
             beforeSend: function(){
-                $('.messages-loader').css({
+                jQuery('.messages-loader').css({
                     'transform': 'scale(1)'
                 });
             },
@@ -136,8 +136,8 @@
                 response = response.slice(0, -1);
                 response = JSON.parse(response);
                 if(response.length > 0){
-                    $('#messages-notif .messages-notif').text(response.length);
-                    $('#messages-notif').css({
+                    jQuery('#messages-notif .messages-notif').text(response.length);
+                    jQuery('#messages-notif').css({
                         'transform': 'scale(.5)'
                     });
                 }
