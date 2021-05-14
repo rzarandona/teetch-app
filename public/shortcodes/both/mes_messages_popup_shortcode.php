@@ -95,8 +95,8 @@
 
     function mapMessages(messages){
         console.log(messages);
+        jQuery('.messages-list').empty();
         messages.forEach((message)=>{
-            jQuery('.messages-list').empty();
             jQuery('.messages-list').append(
                 `
                     <div class="message-item ${message.status}">
