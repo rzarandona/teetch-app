@@ -137,7 +137,7 @@
             success: function(response){
                 response = response.slice(0, -1);
                 response = JSON.parse(response);
-                console.log(response.length);
+                console.log(response);
             },
             complete:function(response){
                 $('.messages-loader').css({
