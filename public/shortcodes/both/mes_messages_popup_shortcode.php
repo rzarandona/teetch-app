@@ -25,11 +25,19 @@
         display: grid;
         grid-template-columns: 1fr 3fr 2fr;
         align-items: center;
+        padding:20px 10px;
+    }
+
+    #mes-messages-popup .message-item:nth-child(odd){
+        background:#efefef;
     }
 
     #mes-messages-popup .message-item .message{
         font-size: .8em;
         justify-self: center;
+    }
+    #mes-messages-popup .message-item .schedule{
+        justify-self: end;
     }
 
 
