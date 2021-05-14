@@ -199,6 +199,7 @@
             $('#mes-messages-popup').css({
                 'transform': 'scale(0)'
             });
+            get_number_of_unopened_messages();
         })
     })
     
