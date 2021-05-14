@@ -36,8 +36,6 @@ else if(in_array( 'student', (array) $user->roles )){
         $response[] = $rel_teacher_full_name;
 
      }
-
-    $response = $messages;
 }
 
 
