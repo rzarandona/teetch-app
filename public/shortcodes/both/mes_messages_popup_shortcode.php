@@ -74,7 +74,7 @@
         bottom: 0;
         justify-content: center;
         border-radius: 10px;
-        transform: scale(1);
+        transform: scale(0);
         transition: .2s;
     }
 
@@ -128,8 +128,6 @@
                     console.log(response)
                 },
                 complete:function(response){
-                    
-
                     $('.messages-loader').css({
                         'transform': 'scale(0)'
                     });
