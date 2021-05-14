@@ -39,7 +39,7 @@ else if(in_array( 'student', (array) $user->roles )){
         $message_item['teacher_name'] = $rel_teacher_full_name;
 
         $rel_schedule_id = get_post_meta($m_id, 'schedule-id', true);
-        $rel_zoom_link = get_post_meta($rel_schedule_id, 'meetin-join-url', true);
+        $rel_zoom_link = get_post_meta($rel_schedule_id, 'meeting-join-url', true);
         $message_item['zoom_link'] = $rel_zoom_link;
 
         $rel_timeslot = get_post_meta($rel_schedule_id, 'time-slot', true);
