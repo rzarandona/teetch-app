@@ -75,6 +75,8 @@
                     );
 
                     $notification_id = wp_insert_post( $create_notification );
+                    update_post_meta($notification_id, 'student-id', $user_id);
+                    update_post_meta($notification_id, 'teacher-id', $teacher_id);
        
             }
 
