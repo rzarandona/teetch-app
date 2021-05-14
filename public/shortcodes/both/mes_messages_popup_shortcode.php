@@ -31,7 +31,7 @@
     }
 
     #mes-messages-popup .message-item.unopened{
-        background:#3ab890;
+        background:#3ab890 !important;
         color:white;
     }
 
