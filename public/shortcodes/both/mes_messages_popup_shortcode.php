@@ -52,71 +52,75 @@
 
 </style>
 <div id='mes-messages-popup'>
+    <div class="messages-list-container">
 
-    <div class="messages-list">
-        
+        <button class='mes-messages-close'><i class="fas fa-times"></i></button>
 
-        <div class="message-item unopened">
+        <div class="messages-list">
             
-            <div class="teacher">Arlene McCoy</div>
-            <div class="message">A schedule for you has been set</div>
-            <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+            <div class="message-item unopened">
+                
+                <div class="teacher">Arlene McCoy</div>
+                <div class="message">A schedule for you has been set</div>
+                <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+            </div>
+
+            <div class="message-item unopened">
+                
+                <div class="teacher">Arlene McCoy</div>
+                <div class="message">A schedule for you has been set</div>
+                <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+            </div>
+
+            <div class="message-item">
+                
+                <div class="teacher">Arlene McCoy</div>
+                <div class="message">A schedule for you has been set</div>
+                <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+            </div>
+
+            <div class="message-item">
+                
+                <div class="teacher">Arlene McCoy</div>
+                <div class="message">A schedule for you has been set</div>
+                <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+            </div>
+
+            <div class="message-item">
+                
+                <div class="teacher">Arlene McCoy</div>
+                <div class="message">A schedule for you has been set</div>
+                <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+            </div>
+            <div class="message-item">
+                
+                <div class="teacher">Arlene McCoy</div>
+                <div class="message">A schedule for you has been set</div>
+                <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+            </div>
+            <div class="message-item">
+                
+                <div class="teacher">Arlene McCoy</div>
+                <div class="message">A schedule for you has been set</div>
+                <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+            </div>
+            <div class="message-item">
+                
+                <div class="teacher">Arlene McCoy</div>
+                <div class="message">A schedule for you has been set</div>
+                <div class="schedule">May 5, 2021 9h00 - 10h45</div>
+
+            </div>
 
         </div>
-
-        <div class="message-item unopened">
-            
-            <div class="teacher">Arlene McCoy</div>
-            <div class="message">A schedule for you has been set</div>
-            <div class="schedule">May 5, 2021 9h00 - 10h45</div>
-
-        </div>
-
-        <div class="message-item">
-            
-            <div class="teacher">Arlene McCoy</div>
-            <div class="message">A schedule for you has been set</div>
-            <div class="schedule">May 5, 2021 9h00 - 10h45</div>
-
-        </div>
-
-        <div class="message-item">
-            
-            <div class="teacher">Arlene McCoy</div>
-            <div class="message">A schedule for you has been set</div>
-            <div class="schedule">May 5, 2021 9h00 - 10h45</div>
-
-        </div>
-
-        <div class="message-item">
-            
-            <div class="teacher">Arlene McCoy</div>
-            <div class="message">A schedule for you has been set</div>
-            <div class="schedule">May 5, 2021 9h00 - 10h45</div>
-
-        </div>
-        <div class="message-item">
-            
-            <div class="teacher">Arlene McCoy</div>
-            <div class="message">A schedule for you has been set</div>
-            <div class="schedule">May 5, 2021 9h00 - 10h45</div>
-
-        </div>
-        <div class="message-item">
-            
-            <div class="teacher">Arlene McCoy</div>
-            <div class="message">A schedule for you has been set</div>
-            <div class="schedule">May 5, 2021 9h00 - 10h45</div>
-
-        </div>
-        <div class="message-item">
-            
-            <div class="teacher">Arlene McCoy</div>
-            <div class="message">A schedule for you has been set</div>
-            <div class="schedule">May 5, 2021 9h00 - 10h45</div>
-
-        </div>
-
     </div>
 
 </div>
