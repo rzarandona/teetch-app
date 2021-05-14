@@ -153,7 +153,7 @@
     }
     function open_all_messages(){
         let args = {
-            action: 'open_all_messages',
+            action: 'open_user_messages',
             nonce: '<?php echo wp_create_nonce("teetchapp_nonce"); ?>',
         }
 
