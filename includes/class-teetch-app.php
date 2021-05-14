@@ -190,6 +190,8 @@ class Teetch_App {
 		$this->loader->add_shortcode( 'teacher_show_today_schedule', $plugin_public, 'teacher_show_today_schedule_shortcode' );
 		$this->loader->add_shortcode( 'student_booking_calendar', $plugin_public, 'student_booking_calendar_shortcode' );
 		$this->loader->add_shortcode( 'modifier_calendar', $plugin_public, 'modifier_calendar_shortcode' );
+
+		$this->loader->add_shortcode( 'mes_messages_popup', $plugin_public, 'mes_messages_popup_shortcode' );
 		
 
 	}
