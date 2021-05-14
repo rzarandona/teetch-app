@@ -147,6 +147,13 @@
                         'transform': 'scale(0)'
                     });
                 }
+                
+
+                // THIS CODE WILL JUST RUN WHEN THE POPUP IS OPEN
+                $('#mes-messages-popup').css({
+                    'transform': 'scale(0)'
+                });
+                jQuery('.messages-list').empty();
             }
         
         });
@@ -217,10 +224,6 @@
 
         $('.mes-messages-close').click(function(){
             open_all_messages();
-            $('#mes-messages-popup').css({
-                'transform': 'scale(0)'
-            });
-            jQuery('.messages-list').empty();
         })
     })
     
