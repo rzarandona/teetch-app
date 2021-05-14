@@ -133,6 +133,11 @@
             success: function(response){
                 response = response.slice(0, -1);
                 response = JSON.parse(response);
+
+                response = response.filter(message => {
+                    return message.status == 'unopened';
+                })
+
                 if(response.length > 0){
                     jQuery('#messages-notif .messages-notif').text(response.length);
                     jQuery('#messages-notif').css({
