@@ -9,6 +9,7 @@ $response = [];
 // if user is teacher
 if(in_array( 'teacher', (array) $user->roles )){
     $response['role'] = 'teacher';
+    echo json_encode($response);
 }
 else if(in_array( 'student', (array) $user->roles )){
 
