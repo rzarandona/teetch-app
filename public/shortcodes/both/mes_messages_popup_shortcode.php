@@ -129,32 +129,31 @@
                 });
             },
             success: function(response){
-                console.log(response);
-                // response = response.slice(0, -1);
-                // response = JSON.parse(response);
+                response = response.slice(0, -1);
+                response = JSON.parse(response);
 
-                // response = response.filter(message => {
-                //     return message.status == 'unopened';
-                // })
+                response = response.filter(message => {
+                    return message.status == 'unopened';
+                })
 
-                // if(response.length > 0){
-                //     jQuery('#messages-notif .messages-notif').text(response.length);
-                //     jQuery('#messages-notif').css({
-                //         'transform': 'scale(.5)'
-                //     });
-                // }else{
-                //     jQuery('#messages-notif .messages-notif').text(response.length);
-                //     jQuery('#messages-notif').css({
-                //         'transform': 'scale(0)'
-                //     });
-                // }
+                if(response.length > 0){
+                    jQuery('#messages-notif .messages-notif').text(response.length);
+                    jQuery('#messages-notif').css({
+                        'transform': 'scale(.5)'
+                    });
+                }else{
+                    jQuery('#messages-notif .messages-notif').text(response.length);
+                    jQuery('#messages-notif').css({
+                        'transform': 'scale(0)'
+                    });
+                }
                 
 
-                // // THIS CODE WILL JUST RUN WHEN THE POPUP IS OPEN
-                // jQuery('#mes-messages-popup').css({
-                //     'transform': 'scale(0)'
-                // });
-                // jQuery('.messages-list').empty();
+                // THIS CODE WILL JUST RUN WHEN THE POPUP IS OPEN
+                jQuery('#mes-messages-popup').css({
+                    'transform': 'scale(0)'
+                });
+                jQuery('.messages-list').empty();
             }
         
         });
@@ -209,10 +208,9 @@
                     });
                 },
                 success: function(response){
-                    // response = response.slice(0, -1);
-                    // response = JSON.parse(response);
-                    console.log(response)
-                    // map_messages(response)
+                    response = response.slice(0, -1);
+                    response = JSON.parse(response);
+                    map_messages(response)
                 },
                 complete:function(response){
                     $('.messages-loader').css({
