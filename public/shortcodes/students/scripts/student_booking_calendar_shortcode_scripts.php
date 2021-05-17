@@ -235,7 +235,9 @@
                         }
                         setTimeout(function(){
                             sc_utils.student_calendar.loader_hide();
-                        }, 3000)
+                        }, 3000);
+
+                        // From ./shortcodes/both/mes_messages_popup_shortcode.php
                         get_number_of_unopened_messages();
                     },
                     complete:function(response){								
