@@ -43,7 +43,7 @@ $messages = get_posts(
         $rel_timeslot = get_post_meta($rel_schedule_id, 'time-slot', true);
         $message_item['timeslot'] = $rel_timeslot;
 
-        $status = get_post_meta($m_id, 'student-status', true);
+        $status = get_post_meta($m_id, 'teacher-status', true);
         $message_item['status'] = $status;
 
         $response[] = $message_item;
