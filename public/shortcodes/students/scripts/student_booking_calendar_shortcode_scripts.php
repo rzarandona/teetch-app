@@ -236,7 +236,7 @@
                         setTimeout(function(){
                             sc_utils.student_calendar.loader_hide();
                         }, 3000)
-
+                        get_number_of_unopened_messages();
                     },
                     complete:function(response){								
 
