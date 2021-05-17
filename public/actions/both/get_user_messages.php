@@ -30,7 +30,7 @@ $messages = get_posts(
 
         $m_id = $message->ID;
 
-        $rel_student_id = get_post_meta($m_id, 'teacher-id', true);
+        $rel_student_id = get_post_meta($m_id, 'student-id', true);
         $rel_student_fname = get_user_meta($rel_student_id, 'first_name', true);
         $rel_student_lname = get_user_meta($rel_student_id, 'last_name', true);
         $rel_student_full_name = $rel_student_fname . ' ' . $rel_student_lname;
