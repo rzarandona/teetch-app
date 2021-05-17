@@ -30,11 +30,11 @@ $messages = get_posts(
 
         $m_id = $message->ID;
 
-        $rel_teacher_id = get_post_meta($m_id, 'teacher-id', true);
-        $rel_teacher_fname = get_user_meta($rel_teacher_id, 'first_name', true);
-        $rel_teacher_lname = get_user_meta($rel_teacher_id, 'last_name', true);
-        $rel_teacher_full_name = $rel_teacher_fname . ' ' . $rel_teacher_lname;
-        $message_item['teacher_name'] = $rel_teacher_full_name;
+        $rel_student_id = get_post_meta($m_id, 'teacher-id', true);
+        $rel_student_fname = get_user_meta($rel_student_id, 'first_name', true);
+        $rel_student_lname = get_user_meta($rel_student_id, 'last_name', true);
+        $rel_student_full_name = $rel_student_fname . ' ' . $rel_student_lname;
+        $message_item['related_user_name'] = $rel_student_full_name;
 
         $rel_schedule_id = get_post_meta($m_id, 'schedule-id', true);
         $rel_zoom_link = get_post_meta($rel_schedule_id, 'meeting-join-url', true);
@@ -79,7 +79,7 @@ else if(in_array( 'student', (array) $user->roles )){
         $rel_teacher_fname = get_user_meta($rel_teacher_id, 'first_name', true);
         $rel_teacher_lname = get_user_meta($rel_teacher_id, 'last_name', true);
         $rel_teacher_full_name = $rel_teacher_fname . ' ' . $rel_teacher_lname;
-        $message_item['teacher_name'] = $rel_teacher_full_name;
+        $message_item['related_user_name'] = $rel_teacher_full_name;
 
         $rel_schedule_id = get_post_meta($m_id, 'schedule-id', true);
         $rel_zoom_link = get_post_meta($rel_schedule_id, 'meeting-join-url', true);
